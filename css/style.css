@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 :root{
     --transition: all 300ms ease-in-out;
     --dark-color: #332e29;
@@ -72,10 +71,33 @@ h1, h2, h3{
     font-weight: 300;
     line-height: 1.8;
 }
+@font-face {
+    font-family: 'Mak';
+    src: url('../fonts/MAK.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mak';
+    src: url('../fonts/MAK-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mak';
+    src: url('../fonts/Mak-SemiBoldHigh.otf') format('opentype');
+    font-weight: 600; /* Adjust this based on the actual weight */
+    font-style: normal;
+}
+.font-mak {
+  font-family: Mak, sans-serif;
+}
 
 /* header */
 #header{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/header-banner.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/photo-26.jpg') center/cover no-repeat fixed;
     justify-content: flex-start;
     align-items: flex-end;
 }
@@ -156,7 +178,7 @@ h1, h2, h3{
 
 /* work */
 #work{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/work-pic.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/photo-29.jpg') center/cover no-repeat fixed;
     color: var(--light-color);
 }
 #work .title h2, #work h3{
@@ -288,6 +310,16 @@ h1, h2, h3{
 
 /* Media Queries */
 
+.gallery img {
+          width: 100%;
+          height: auto;
+          cursor: pointer;
+          transition: transform 0.3s;
+        }
+.gallery img:hover {
+          transform: scale(1.05);
+        }
+
 @media(min-width: 450px){
     .work-bottom{
         grid-template-columns: repeat(2, 1fr);
@@ -302,16 +334,57 @@ h1, h2, h3{
     .work-bottom{
         grid-template-columns: repeat(4, 1fr);
     }
-    .portfolio-grid{
-        grid-template-columns: repeat(2, 1fr);
+    /*.portfolio-grid{*/
+    /*    grid-template-columns: repeat(2, 1fr);*/
+    /*}*/
+    .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
     }
     .portfolio-grid > div{
         height: 300px;
         overflow: hidden;
+        position: relative;
     }
     .portfolio-grid > div img{
+        width: 100%;
         height: 100%;
         object-fit: cover;
+
+    }
+    .tw-width-2 {
+    width: calc(2 * (100% + 1rem)); /* Adjust the width as needed */
+    }
+    .tw-height-2 {
+    height: calc(2 * (100% + 1rem)); /* Adjust the height as needed */
+    }
+    /* Define the specific item to span two rows */
+    .portfolio-grid .large-item-r-h {
+        grid-row: span 2; /* Span two rows vertically */
+        height: 100%;
+        width: auto;
+    }
+    .portfolio-grid .large-item-r-w {
+        grid-row: span 2; /* Span two rows vertically */
+        height: auto;
+        width: 100%;
+    }
+        .portfolio-grid .large-item-c-h {
+        grid-column: span 2; /* Span two rows vertically */
+        height: 100%;
+        width: auto;
+    }
+    .portfolio-grid .large-item-c-w {
+        grid-column: span 2; /* Span two rows vertically */
+        height: auto;
+        width: 100%;
+    }
+    .object-top {
+    object-position: top;
+    }
+    .object-bottom {
+    object-position: bottom;
     }
     .contact-left form .form-control{
         max-width: 500px;
