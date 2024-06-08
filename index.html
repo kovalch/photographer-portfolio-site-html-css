@@ -281,9 +281,40 @@
                         <p class = "lead"><i class = "fas fa-phone-alt"></i> +41 (76) 7203070</p>
                         <p class = "lead"><i class = "fas fa-envelope"></i> natko.photography@gmail.com</p>
 
-                        <form action="">
-                            <input type = "text" class = "form-control" placeholder="Your name here ...">
-                            <input type = "email" class = "form-control" placeholder="Your email here">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                        <script>
+                            function postToGoogle() {
+                              var field1 = $("#Name").val();
+                              var field2 = $("#Email").val();
+                              // var field3 = $("#Phone").val();
+                              // var field4 = $("#Message").val();
+
+                              $.ajax({
+                                url: "https://docs.google.com/forms/d/e/1FAIpQLSdlxajBH95hGOub4UouahjirNoQibdiqagURyFuTkaF-igWLg/viewform",
+
+                                //add your google form generated numbers below which are also the 'names' of your inputs
+                                data: {
+                                  "entry.2005620554": field1,
+                                  "entry.1045781291": field2,
+                                  // "entry.1737955681": field3,
+                                  // "entry.354351359": field4
+                                },
+                                type: "POST",
+                                dataType: "xml",
+                                success: function (d) {
+                                  $('#contact').trigger('reset');
+                                },
+                                error: function (x, y, z) {
+                                  $('#contact').trigger('reset');
+                                }
+                              });
+                              return false;
+                            }
+                          </script>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfD4xH-something/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+<!--                        <form id="contact" onsubmit="return postToGoogle();">-->
+                        <input type="text" name="entry.2005620554" class = "form-control" placeholder="Your name here ...">
+                            <input type = "email" name="entry.1045781291" class = "form-control" placeholder="Your email here">
                             <input type = "submit" class = "btn-submit btn" value = "Submit">
                         </form>
                     </div>
