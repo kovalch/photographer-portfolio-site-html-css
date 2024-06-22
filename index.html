@@ -309,6 +309,92 @@
         </section>
         <!-- end of portfolio section -->
 
+
+        <!-- pricing section -->
+        <section id = "price" class = "py-7">
+            <div class = "container">
+                <div class = "insta-content">
+                    <div class = "title">
+                        <h2>Angebote</h2>
+                        <a href = "#footer" class = "btn-down btn-down-white">
+                            <i class = "fas fa-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class = "price-grid grid">
+                        <!-- Pricing Card 1 -->
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3 class="font-mak">Basic Plan</h3>
+                                <hr class="w-12 border border-blue-500 mb-6">
+                            </div>
+                            <div class="pricing-body">
+                                <ul>
+                                    <li>Beratung zur Location und Outfits</li>
+                                    <li>1 Stunde Fotoshooting</li>
+                                    <li>Mindestens 15 Fotos</li>
+                                    <li>Professionelle Bildbearbeitung inkl. Retusche</li>
+                                    <li>Fotos innerhalb von 20 Tagen</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-header">
+                                <p>CHF 300</p>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#price" class="btn get-started-btn" data-card="Basic Plan">Get Started</a>
+                            </div>
+                        </div>
+                        <!-- Pricing Card 2 -->
+                        <div class="pricing-card framed">
+                            <div class="pricing-header">
+                                <h3 class="font-mak">Standard Plan</h3>
+                                <hr class="w-12 border border-blue-500 mb-6">
+                            </div>
+                            <div class="pricing-body">
+                                <ul>
+                                    <li>Beratung zur Location und Outfits</li>
+                                    <li>2 Stunden Fotoshooting</li>
+                                    <li>Mindestens 40 Fotos</li>
+                                    <li>Professionelle Bildbearbeitung inkl. Retusche</li>
+                                    <li>Fotos innerhalb von 20 Tagen</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-header">
+                                <p>CHF 500</p>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#price" class="btn get-started-btn" data-card="Standard Plan">Get Started</a>
+                            </div>
+                        </div>
+                        <!-- Pricing Card 3 -->
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3 class="font-mak">Premium Plan</h3>
+                                <hr class="w-12 border border-blue-500 mb-6">
+                            </div>
+                            <div class="pricing-body">
+                                <ul>
+                                    <li>Beratung zur Location und Outfits</li>
+                                    <li>3 Stunden Fotoshooting</li>
+                                    <li>Mindestens 70 Fotos</li>
+                                    <li>Professionelle Bildbearbeitung inkl. Retusche</li>
+                                    <li>Fotos innerhalb von 20 Tagen</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-header">
+                                <p>CHF 700</p>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#price" class="btn get-started-btn" data-card="Premium Plan">Get Started</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of pricing section -->
+
+
         <!-- contact section -->
         <section id = "contact" class = "py-7">
             <div class = "container">
@@ -320,44 +406,25 @@
                         <p class = "lead"><i class = "fas fa-phone-alt"></i> +41 76 720 30 70</p>
                         <p class = "lead"><i class = "fas fa-envelope"></i> natko.photography@gmail.com</p>
 
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                        <script>
-                            function postToGoogle() {
-                              var field1 = $("#Name").val();
-                              var field2 = $("#Email").val();
-                              // var field3 = $("#Phone").val();
-                              // var field4 = $("#Message").val();
-
-                              $.ajax({
-                                url: "https://docs.google.com/forms/d/e/1FAIpQLSdlxajBH95hGOub4UouahjirNoQibdiqagURyFuTkaF-igWLg/viewform",
-
-                                //add your google form generated numbers below which are also the 'names' of your inputs
-                                data: {
-                                  "entry.2005620554": field1,
-                                  "entry.1045781291": field2,
-                                  // "entry.1737955681": field3,
-                                  // "entry.354351359": field4
-                                },
-                                type: "POST",
-                                dataType: "xml",
-                                success: function (d) {
-                                  $('#contact').trigger('reset');
-                                },
-                                error: function (x, y, z) {
-                                  $('#contact').trigger('reset');
-                                }
-                              });
-                              return false;
-                            }
-                          </script>
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSfD4xH-something/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-<!--                        <form id="contact" onsubmit="return postToGoogle();">-->
-                        <input type="text" name="entry.2005620554" class = "form-control" placeholder="Your name here ...">
-                            <input type = "email" name="entry.1045781291" class = "form-control" placeholder="Your email here">
-                            <input type = "submit" class = "btn-submit btn" value = "Submit">
-                        </form>
+                        <!-- Contact Form Modal -->
+                        <div id="contactFormModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn">&times;</span>
+                                <form id="contactForm">
+                                    <h2>Request Photoshooting</h2>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="pricingCard">Pricing Plan:</label>
+                                    <input id="pricingCard" name="pricingCard">
+                                    <label for="message">Message:</label>
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                    <button type="submit" class="btn">Send Request</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
                     <div class = "contact-right">
                         <img src = "images/contact-pic-my.jpg" alt = "contact image">
                     </div>
@@ -365,27 +432,6 @@
             </div>
         </section>
         <!-- end of contact section -->
-
-<!--        &lt;!&ndash; instagram section &ndash;&gt;-->
-<!--        <section id = "insta" class = "py-7">-->
-<!--            <div class = "container">-->
-<!--                <div class = "insta-content">-->
-<!--                    <div class = "title">-->
-<!--                        <h2>instagram</h2>-->
-<!--                        <a href = "#footer" class = "btn-down btn-down-white">-->
-<!--                            <i class = "fas fa-chevron-down"></i>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class = "insta-grid grid">-->
-<!--                        <div><img src = "images/port-1.jpg"></div>-->
-<!--                        <div><img src = "images/port-2.jpg"></div>-->
-<!--                        <div><img src = "images/port-3.jpg"></div>-->
-<!--                        <div><img src = "images/port-4.jpg"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
-<!--        &lt;!&ndash; end of instagram section &ndash;&gt;-->
     </main>
     <!-- end of main content -->
 
@@ -394,28 +440,16 @@
         <div class = "container">
             <div class = "footer-content">
                 <div>
-
                     <h3 class="font-mak">Nataliia Kovalchuk</h3>
                     <div><img src = "https://d11x3xfornpl7m.cloudfront.net/avatar-100.jpg"></div>
                 </div>
-<!--<li>-->
-<!--                        <a href = "https://www.instagram.com/natko.ph" class = "flex">-->
-<!--                            <i class = "fab fa-instagram"></i>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href = "https://www.facebook.com/profile.php?id=61559858126332" class = "flex">-->
-<!--                            <i class = "fab fa-facebook-f"></i>-->
-<!--                        </a>-->
-<!--                    </li>-->
                 <div>
-<!--                    <h3>Links</h3>-->
                     <ul class = "flex">
                         <li><a href = "#about">About Me</a></li>
                         <li><a href = "#work">Work</a></li>
                         <li><a href = "#portfolio_top">Portfolio</a></li>
+                        <li><a href = "#price">Angebote</a></li>
                         <li><a href = "#contact">Contact Me</a></li>
-<!--                        <li><a href = "#">Instagram</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -432,7 +466,69 @@
             loop: true // Enable looping through the gallery
           });
         });
-      </script>
+    </script>
 
+    <!-- Include EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("1u3A2Hkg_pEHtDxSs");
+        })();
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("contactFormModal");
+
+        // Get the button that opens the modal
+        var btns = document.querySelectorAll(".get-started-btn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-btn")[0];
+
+        // When the user clicks the button, open the modal and set the pricing card info
+         btns.forEach(btn => {
+            btn.onclick = function (event) {
+                event.preventDefault();
+                var pricingCard = btn.getAttribute("data-card");
+                document.getElementById("pricingCard").value = pricingCard;
+                modal.style.display = "block";
+            }
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Handle form submission
+        document.getElementById("contactForm").onsubmit = function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            var formData = {
+                to_name: "Nataliia",
+                from_name: document.getElementById("name").value,
+                reply_to: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+                data_card: document.getElementById("pricingCard").value
+            };
+
+            // Send email using EmailJS
+            emailjs.send("service_a0jjb6n","template_zwh7ek8",formData
+            ).then(function(response) {
+                    alert("Danke, Ihr Antrag wurde geshickt!");
+                    modal.style.display = "none";
+                }, function(error) {
+                    alert("Failed to send request. Please try again.");
+                });
+        }
+    </script>
 </body>
 </html>
