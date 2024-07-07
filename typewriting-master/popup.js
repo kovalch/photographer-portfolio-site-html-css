@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-                          console.log('JavaScript-Datei geladen'); // auskommentieren
-                          
+document.addEventListener('DOMContentLoaded', function () {       
                           // JavaScript zum Öffnen und Schließen des Popups
                           var openPopup = document.getElementById('open-popup');
                           var closePopup = document.getElementById('close-popup');
