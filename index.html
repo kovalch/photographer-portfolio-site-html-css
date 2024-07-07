@@ -15,6 +15,8 @@
     <link rel = "stylesheet" href = "css/style.css">
     <!-- Fancybox -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="typewriting-master/typewriting.js" defer></script>
+    <script src="typewriting-master/popup.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <!-- making pic visible for google search results -->
@@ -102,7 +104,7 @@
         <!-- end of about section -->
 
         <!-- work section -->
-        <section id = "angebot" class = "vh-100 flex py-7">
+        <section id = "angebot" class = "angebot vh-100 flex py-7">
             <div class = "container">
                 <div class = "work-content">
                     <div class = "title">
@@ -315,14 +317,14 @@
         <!-- pricing section -->
         <section id = "pakete" class = "py-7">
             <div class = "container">
-                <div class = "insta-content">
-                    <div class = "title">
+                <div class="insta-content">
+                    <div class="title">
                         <h2>Pakete</h2>
-                        <a href = "#footer" class = "btn-down btn-down-white">
-                            <i class = "fas fa-chevron-down"></i>
+                        <a href="#footer" class="btn-down btn-down-white">
+                            <i class="fas fa-chevron-down"></i>
                         </a>
                     </div>
-                    <div class = "price-grid grid">
+                    <div class="price-grid grid">
                         <!-- Pricing Card 1 -->
                         <div class="pricing-card">
                             <div class="pricing-header">
@@ -346,7 +348,7 @@
                             </div>
                         </div>
                         <!-- Pricing Card 2 -->
-                        <div class="pricing-card framed">
+                        <div class="pricing-card">
                             <div class="pricing-header">
                                 <h3 class="font-mak">Standard Paket</h3>
                                 <hr class="w-12 border border-blue-500 mb-6">
@@ -389,7 +391,40 @@
                                 <a href="#price" class="btn get-started-btn" data-card="Premium Paket">Terminanfrage</a>
                             </div>
                         </div>
-
+                    </div>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="einwilligung" id="einwilligung" required>
+                            Ich habe die <a href="#" id="open-popup">Geschäftsbedingungen</a> gelesen und bin damit einverstanden, dass die Fotos für Marketingzwecke veröffentlicht werden dürfen.
+                            </label>
+                    <div class="popup-overlay" id="popup-overlay"></div>
+                    <div class="popup" id="popup">
+                        <span class="close-popup" id="close-popup">&times;</span>
+                        <h2>Geschäftsbedingungen</h2>
+                        <p class="justify-text">
+                        Durch das Buchen unserer Dienstleistungen stimmen Sie zu, dass die von uns aufgenommenen Fotos
+                        für Marketingzwecke, einschließlich der Veröffentlichung auf sozialen Medienplattformen wie Instagram,
+                        verwendet werden dürfen. Wir respektieren Ihre Privatsphäre und werden keine Fotos veröffentlichen, die
+                        Sie in einer unangemessenen oder peinlichen Situation zeigen. Sie können jederzeit schriftlich widerrufen.
+                        </p>
+                    </div>
+                    <!-- Contact Form Modal -->
+                    <div id="contactFormModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <form id="contactForm">
+                                <h2>Terminanfrage Fotosession</h2>
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="email" class="form-label">E-Mail:</label>
+                                <input type="email" id="email" name="email" required>
+                                <label for="pricingCard" class="form-label">Paket:</label>
+                                <input id="pricingCard" name="pricingCard">
+                                <label for="message" class="form-label">Dein Terminvorschlag:</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                                <button type="submit">Senden</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -409,25 +444,6 @@
                         <p class = "lead"><i class = "fas fa-envelope"></i> natko.photography@gmail.com</p>
                         <p class = "lead">Kontaktiere mich gerne per Telefon oder E-Mail. </p>
                         <p class = "lead">Ich bin offen für deine Ideen, falls keines der obigen Pakete<br> für dich passt und du eine individuelle Lösung wünscht. <br>Komm gerne auf mich zu &#128522;</p>
-
-                        <!-- Contact Form Modal -->
-                        <div id="contactFormModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close-btn">&times;</span>
-                                <form id="contactForm">
-                                    <h2>Terminanfrage Fotosession</h2>
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
-                                    <label for="email">E-Mail:</label>
-                                    <input type="email" id="email" name="email" required>
-                                    <label for="pricingCard">Paket:</label>
-                                    <input id="pricingCard" name="pricingCard">
-                                    <label for="message">Dein Terminvorschlag:</label>
-                                    <textarea id="message" name="message" rows="4" required></textarea>
-                                    <button type="submit" class="btn">Senden</button>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                     <div class = "contact-right">
                         <img src = "images/contact-pic-my.jpg" alt = "contact image">
@@ -466,78 +482,82 @@
     </footer>
     <!-- end of footer -->
 
-
-    <!-- typewriting js -->
-    <script src = "typewriting-master/typewriting.js"></script>
-    <script>
-        $(document).ready(function() {
-          Fancybox.bind('[data-fancybox="gallery"]', {
-            loop: true // Enable looping through the gallery
-          });
-        });
-    </script>
-
     <!-- Include EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
-            emailjs.init("1u3A2Hkg_pEHtDxSs");
-        })();
-    </script>
-    <script>
-        // Get the modal
-        var modal = document.getElementById("contactFormModal");
-
-        // Get the button that opens the modal
-        var btns = document.querySelectorAll(".get-started-btn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close-btn")[0];
-
-        // When the user clicks the button, open the modal and set the pricing card info
-         btns.forEach(btn => {
-            btn.onclick = function (event) {
-                event.preventDefault();
-                var pricingCard = btn.getAttribute("data-card");
-                document.getElementById("pricingCard").value = pricingCard;
-                modal.style.display = "block";
-            }
-        });
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Handle form submission
-        document.getElementById("contactForm").onsubmit = function(event) {
-            event.preventDefault();
-
-            // Collect form data
-            var formData = {
-                to_name: "Nataliia",
-                from_name: document.getElementById("name").value,
-                reply_to: document.getElementById("email").value,
-                message: document.getElementById("message").value,
-                data_card: document.getElementById("pricingCard").value
-            };
-
-            // Send email using EmailJS
-            emailjs.send("service_a0jjb6n","template_zwh7ek8",formData
-            ).then(function(response) {
-                    alert("Danke, Ihre Terminanfrage wurde gesendet!");
-                    modal.style.display = "none";
-                }, function(error) {
-                    alert("Terminanfrage fehlgeschalgen. Bitte erneut probieren.");
-                });
-        }
-    </script>
+        $(document).ready(function() {
+                          Fancybox.bind('[data-fancybox="gallery"]', {
+                                        loop: true // Enable looping through the gallery
+                                        });
+                          
+                          // Initialize EmailJS
+                          emailjs.init("1u3A2Hkg_pEHtDxSs");
+                          
+                          // Handle form submission
+                          document.getElementById("contactForm").onsubmit = function(event) {
+                          event.preventDefault();
+                          
+                          // Collect form data
+                          var formData =
+                          {
+                              to_name: "Nataliia",
+                              from_name: document.getElementById("name").value,
+                              reply_to: document.getElementById("email").value,
+                              message: document.getElementById("message").value,
+                              data_card: document.getElementById("pricingCard").value
+                          };
+                          
+                          // Send email using EmailJS
+                          emailjs.send("service_a0jjb6n","template_zwh7ek8",formData
+                                       ).then(function(response) {
+                                              alert("Danke, Ihre Terminanfrage wurde gesendet!");
+                                              contactFormModal.style.display = "none";
+                                              }, function(error) {
+                                              alert("Terminanfrage fehlgeschlagen. Bitte erneut probieren.");
+                                              });
+                          };
+                          
+                          // Get the modal
+                          var modal = document.getElementById("contactFormModal");
+                          
+                          // Get the button that opens the modal
+                          var btns = document.querySelectorAll(".get-started-btn");
+                          
+                          // Get the <span> element that closes the modal
+                          var span = document.getElementsByClassName("close-btn")[0];
+                          
+                          // When the user clicks the button, open the modal and set the pricing card info
+                          btns.forEach(btn => {
+                                       btn.onclick = function (event)
+                                       {
+                                       
+                                           if (!document.getElementById('einwilligung').checked)
+                                           {
+                                               alert('Bitte stimmen Sie den Geschäftsbedingungen zu, bevor Sie eine Terminanfrage senden.');
+                                       
+                                           }
+                                           else
+                                           {
+                                               event.preventDefault();
+                                               var pricingCard = btn.getAttribute("data-card");
+                                               document.getElementById("pricingCard").value = pricingCard;
+                                                modal.style.display = "block";
+                                           }
+                                       }
+                                       });
+                          
+                          // When the user clicks on <span> (x), close the modal
+                          span.onclick = function () {
+                          modal.style.display = "none";
+                          }
+                          
+                          // When the user clicks anywhere outside of the modal, close it
+                          window.onclick = function (event) {
+                          if (event.target == modal) {
+                          modal.style.display = "none";
+                          }
+                          }
+                          });
+        </script>
 </body>
 </html>
