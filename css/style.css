@@ -666,10 +666,19 @@ label a:hover {
     align-items: center;
     z-index: 1000;
 }
+
 .close-popup {
+    color: #aaa;
     float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
 }
 
 .justify-text {
