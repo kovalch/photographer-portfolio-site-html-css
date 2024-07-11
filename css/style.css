@@ -623,8 +623,8 @@ label {
     color: #FFFFFF;
 }
 label a {
-    color: #FFFF00; /* Setzt die Linkfarbe */
-    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+    color: #FFFFFF; /* Setzt die Linkfarbe */
+    text-decoration: underline; /* Entfernt die Unterstreichung des Links */
 }
 label a:hover {
     text-decoration: underline; /* Unterstreicht den Link beim Hover */
