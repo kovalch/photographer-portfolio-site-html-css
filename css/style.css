@@ -203,7 +203,13 @@ h1, h2, h3{
 .portfolio-grid > div:hover{
     transform: scale(0.9);
 }
-
+/* portfolio 3 */
+.portfolio-grid-3 > div{
+    transition: var(--transition);
+}
+.portfolio-grid-3 > div:hover{
+    transform: scale(0.9);
+}
 /* contact */
 #contact{
     background-color: rgb(248, 248, 248);
@@ -384,6 +390,22 @@ h1, h2, h3{
         object-fit: cover;
         
     }
+        .portfolio-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+    .portfolio-grid-3 > div{
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    .portfolio-grid-3 > div img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
     .tw-width-2 {
         width: calc(2 * (100% + 1rem)); /* Adjust the width as needed */
     }
@@ -410,6 +432,11 @@ h1, h2, h3{
         grid-column: span 2; /* Span two rows vertically */
         height: auto;
         width: 100%;
+    }
+    .portfolio-grid-3 .large-item-r-h-3 {
+        grid-row: span 2; /* Span two rows vertically */
+        height: 100%;
+        width: auto;
     }
     .object-top {
         object-position: top;
