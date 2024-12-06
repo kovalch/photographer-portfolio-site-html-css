@@ -663,7 +663,7 @@ label a:hover {
     color: #333;
 }
 .popup p {
-    font-size: 1.5rem; /* Schriftgröße für den Text */
+    font-size: 2.5rem; /* Schriftgröße für den Text */
     line-height: 1.6; /* Erhöht den Zeilenabstand für bessere Lesbarkeit */
     margin-bottom: 20px; /* Abstand nach unten */
 }
@@ -680,7 +680,7 @@ label a:hover {
     border-radius: 8px;
     z-index: 1001;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 800px;
 }
 .popup-overlay {
     display: none;
@@ -712,7 +712,7 @@ label a:hover {
 .justify-text {
     text-align: justify; /* Text ausrichten */
     margin-bottom: 25px; /* Abstand zum unteren Rand */
-    font-size: 1.25em; /* Schriftgröße leicht anpassen */
+    font-size: 0.035em; /* Schriftgröße leicht anpassen */
     line-height: 1.2; /* Zeilenhöhe für bessere Lesbarkeit */
     padding: 10px; /* Innenabstand für besseren Abstand zum Rand */
     border: 1px solid #ddd; /* Optional: Rahmen um den Text */
