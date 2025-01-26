@@ -505,15 +505,15 @@ h1, h2, h3{
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 5px;
     text-align: center;
 }
 .pricing-card.framed {
-    border: 4px solid #f6bd60;
+    border: 4px solid #3D4815FF;
     padding: 18px; /* Adjust padding to account for border width */
 }
 .pricing-header {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .pricing-header h3 {
@@ -548,7 +548,7 @@ h1, h2, h3{
 
 .pricing-body li::before {
     content: "✔";
-    color: #f6bd60;
+    color: #586920;
     font-weight: bold;
     position: absolute;
     left: 0;
