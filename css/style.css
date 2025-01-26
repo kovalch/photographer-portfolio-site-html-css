@@ -513,7 +513,7 @@ h1, h2, h3{
     padding: 18px; /* Adjust padding to account for border width */
 }
 .pricing-header {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .pricing-header h3 {
