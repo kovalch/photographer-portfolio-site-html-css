@@ -702,6 +702,13 @@ label a:hover {
     font-weight: bold;
 }
 
+.text-popup {
+    color: #aaa;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .close-popup:hover,
 .close-popup:focus {
     color: black;
@@ -713,7 +720,8 @@ label a:hover {
     text-align: justify; /* Text ausrichten */
     opacity: 0.8;
     margin-bottom: 25px; /* Abstand zum unteren Rand */
-    font-size: 1.7rem; /* Schriftgröße leicht anpassen */
+    /*font-size: 1.7rem; !* Schriftgröße leicht anpassen *!*/
+    font-size: 8px;
     line-height: 1.8; /* Zeilenhöhe für bessere Lesbarkeit */
     font-weight: 300;
     /*padding: 10px; !* Innenabstand für besseren Abstand zum Rand *!*/
