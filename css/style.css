@@ -260,7 +260,10 @@ h1, h2, h3{
     font-weight: bold;
     color: #000000;
 }
-
+.pakete_wed{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/photo-90.jpg') center/cover no-repeat fixed;
+    min-height: 65vh;
+}
 .pakete{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/photo-46.jpg') center/cover no-repeat fixed;
     min-height: 65vh;
@@ -703,7 +706,7 @@ label a:hover {
 }
 
 .text-popup {
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.85);
     float: left;
     font-size: 18px;
     font-weight: bold;
