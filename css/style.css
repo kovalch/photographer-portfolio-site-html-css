@@ -261,9 +261,16 @@ h1, h2, h3{
     color: #000000;
 }
 .pakete_wed{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/photo-90.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/wd/photo-1.jpg') center/cover no-repeat fixed;
     min-height: 65vh;
 }
+.pakete_wed .title h2{
+    color: var(--light-color);
+}
+.pakete_wed .title h2::after{
+    background-color: var(--light-color);
+}
+
 .pakete{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d11x3xfornpl7m.cloudfront.net/photo-46.jpg') center/cover no-repeat fixed;
     min-height: 65vh;
